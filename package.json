@@ -1,7 +1,7 @@
 {
   "name": "@bs/transport",
   "version": "0.0.2",
-  "description": "newtwork transport services utility light-weight library",
+  "description": "network transport services utility lightweight library",
   "main": "index.js",
   "type": "module",
   "scripts": {
