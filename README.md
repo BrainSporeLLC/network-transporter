@@ -65,14 +65,14 @@ export class AuthService {
 // Util Index file for API service calls
 // index.js
  import { Request } from "@bs/transport";
- import myEnvironment from "@environment" //update this path to point to your environment file
+ import {apiBaseUrl} from "@environment" //update this path to point to your environment file
  import {AuthService} from "auth.js";
 
- export _request = new Request(AuthService, myEnvironment);
+ export _request = new Request(new AuthService(), apiBaseUrl);
 
 //OR
 
-export _request = new Request(AuthService, myEnvironment, { timeout: 5000 });
+export _request = new Request(new AuthService(), apiBaseUrl, { timeout: 5000 });
 
 // You can now import _request to any of your file.
 
@@ -95,7 +95,7 @@ const postCustomer = (payload) => {
 // Example of How environment file can look like:
 // environment/index.js
 export {
-APP_API_BASE_URL:APIBASEURL   //You must name it APIBASEURL or give it alias of APIBASEURL
+apiBaseUrl
 } = process.env
 
 ```
