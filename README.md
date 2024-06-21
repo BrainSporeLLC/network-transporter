@@ -31,7 +31,7 @@ run `npm install --save @bs/transport`
 ### How to use this utility
 
 #### RESTful API
-1. axios example:
+1. Axios example
 `auth.js
 export class AuthService {
     /*
