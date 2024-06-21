@@ -1,2 +1,1 @@
-
-impo
+export * from './src/restful'
