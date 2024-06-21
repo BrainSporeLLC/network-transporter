@@ -32,7 +32,9 @@ run `npm install --save @bs/transport`
 
 #### RESTful API
 1. Axios example
-`auth.js
+
+```
+auth.js
 export class AuthService {
     /*
     *isAuthenticated: boolean
@@ -41,4 +43,4 @@ export class AuthService {
         return true;
     }
 }
-`
+```
