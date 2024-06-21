@@ -1,13 +1,13 @@
 import axios from "axios";
 export class Request {
-    constructor(AuthService, environment, options = {}) {
-        this.AuthService = new AuthService();
-        this.environment = environment;
+    constructor(AuthService, APIBASEURL, options = {}) {
+        this.AuthService = AuthService;
+        this.apiBaseURL = APIBASEURL;
         this.options = options;
     }
     async axiosRequest(options) {
         const instance = axios.create({
-            baseURL: this.environment.APIBASEURL,
+            baseURL: this.apiBaseURL,
             ...this.options,
         });
         const requestInterceptor = function (config) {
