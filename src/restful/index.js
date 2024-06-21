@@ -4,6 +4,7 @@ export class Request {
         this.AuthService = AuthService;
         this.apiBaseURL = APIBASEURL;
         this.options = options;
+        this.axiosRequest = this.axiosRequest.bind(this);
     }
     async axiosRequest(options) {
         const instance = axios.create({
