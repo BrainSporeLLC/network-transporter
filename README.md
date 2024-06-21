@@ -26,7 +26,11 @@ This utility library brings you a plug and play implementation to all known comm
 
 ### Installation
 To install this utility
-run `npm install --save @bs/transport`
+run
+
+```bash 
+npm i @brainspore/transport
+```
 
 ### How to use this utility
 
