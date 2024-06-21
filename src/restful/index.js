@@ -1,3 +1,4 @@
+import axios from 'axios';
 export class Request {
     constructor(AuthService, APIBASEURL, options = {}) {
         this.AuthService = AuthService;

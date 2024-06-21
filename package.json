@@ -1,6 +1,6 @@
 {
   "name": "@brainspore/transport",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "network transport services utility lightweight library",
   "main": "index.js",
   "type": "module",
