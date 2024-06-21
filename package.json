@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "newtwork transport services utility light-weight library",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
