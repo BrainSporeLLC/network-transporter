@@ -16,13 +16,13 @@ This utility library brings you a plug and play implementation to all known comm
 
 `Message Ques` <a href="https://aws.amazon.com/message-queue/#:~:text=Message%20Queues&text=A%20message%20queue%20is%20a,once%2C%20by%20a%20single%20consumer.">Message Ques</a>
 
-`SignalIR` <a http="https://dotnet.microsoft.com/en-us/apps/aspnet/signalr">SignalIR</a>
+`SignalIR` <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/signalr">SignalIR</a>
 
-`graphQL` <a http="https://graphql.org/learn/">GraphQl</a>
+`graphQL` <a href="https://graphql.org/learn/">GraphQl</a>
 
-`gRPC` <a http="https://grpc.io/docs/">gRPC</a>
+`gRPC` <a href="https://grpc.io/docs/">gRPC</a>
 
-`RPC` <a http="https://solana.com/docs/rpc">RPC</a>
+`RPC` <a href="https://solana.com/docs/rpc">RPC</a>
 
 ### Installation
 To install this utility
