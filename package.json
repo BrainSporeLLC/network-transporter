@@ -1,0 +1,33 @@
+{
+  "name": "@brainspore/transport",
+  "version": "0.0.3",
+  "description": "network transport services utility lightweight library",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrainSporeLLC/network-transporter.git"
+  },
+  "keywords": [
+    "axios",
+    "js",
+    "node.js",
+    "react.js",
+    "vue.js",
+    "fetch",
+    "socket",
+    "socket.io"
+  ],
+  "author": "Paullaster Okoth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrainSporeLLC/network-transporter/issues"
+  },
+  "homepage": "https://github.com/BrainSporeLLC/network-transporter#readme",
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
+}

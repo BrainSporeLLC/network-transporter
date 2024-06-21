@@ -1,0 +1,16 @@
+# Ignored files
+
+# Environment
+.env
+.env.local
+.env.development
+.env.dev
+
+# Lock files
+*-lock.*
+*.lock
+*.lock*
+
+# modules
+node_modules
+
