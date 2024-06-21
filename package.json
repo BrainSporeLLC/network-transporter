@@ -1,5 +1,5 @@
 {
-  "name": "@bs/transport",
+  "name": "@brainspore/transport",
   "version": "0.0.3",
   "description": "network transport services utility lightweight library",
   "main": "index.js",
