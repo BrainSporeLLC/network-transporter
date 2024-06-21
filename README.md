@@ -33,14 +33,65 @@ run `npm install --save @bs/transport`
 #### RESTful API
 1. Axios example
 
-```
-auth.js
+```js
+// auth.js
 export class AuthService {
+    #token;
+    #user;
     /*
     *isAuthenticated: boolean
     */
+
+   //If you don't call this method isAuthenticated, you must give it this alias how you
+    //prefer
     isAuthenticated() {
         return true;
     }
+    //If you don't call this method getToken, you must give it this alias how you
+    //prefer
+    getToken() {  
+        return this.#token;
+    }
+    //If you don't call this method logout, you must give it this alias how you
+    //prefer
+    async logout() {
+        session.clear();
+    }
 }
+// Util Index file for API service calls
+// index.js
+ import { Request } from "@bs/transport";
+ import myEnvironment from "@environment" //update this path to point to your environment file
+ import {AuthService} from "auth.js";
+
+ export _request = new Request(AuthService, myEnvironment);
+
+//OR
+
+export _request = new Request(AuthService, myEnvironment, { timeout: 5000 });
+
+// You can now import _request to any of your file.
+
+// Using _request in your file
+// customer.js
+const postCustomer = (payload) => {
+    // start loader for UX
+    // This method is async. Supports both async and async and Promise 
+    _request.axiosRequest({
+        url: 'customer',
+        method: 'POST',
+        data: payload,
+    })
+    .then((response) =>{
+        console.log(response);
+    })
+    .catch((err) =>{});
+}
+
+// Example of How environment file can look like:
+// environment/index.js
+export {
+APP_API_BASE_URL:APIBASEURL   //You must name it APIBASEURL or give it alias of APIBASEURL
+} = process.env
+
 ```

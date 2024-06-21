@@ -1,5 +1,5 @@
 import axios from "axios";
-export class _request {
+export class Request {
     constructor(AuthService, environment, options = {}) {
         this.AuthService = new AuthService();
         this.environment = environment;
@@ -21,7 +21,7 @@ export class _request {
             if (this.AuthService.isAuthenticated()) {
                 config.headers = {
                     ...config.headers,
-                    Authorization: `Bearer ${this.AuthService.GetToken()}`,
+                    Authorization: `Bearer ${this.AuthService.getToken()}`,
                 };
             }
             config.validateStatus = function (status) {
@@ -32,7 +32,7 @@ export class _request {
 
         const errorInterceptor = async function (error) {
             if (error && error.response?.status === 401) {
-                await this.AuthService.Logout();
+                await this.AuthService.logout();
             }
             if (
                 error
