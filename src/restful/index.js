@@ -1,4 +1,3 @@
-import axios from "axios";
 export class Request {
     constructor(AuthService, APIBASEURL, options = {}) {
         this.AuthService = AuthService;
@@ -6,7 +5,8 @@ export class Request {
         this.options = options;
         this.axiosRequest = this.axiosRequest.bind(this);
     }
-    async axiosRequest(options) {
+    axiosRequest(options) {
+        const AuthService = this.AuthService;
         const instance = axios.create({
             baseURL: this.apiBaseURL,
             ...this.options,
@@ -19,10 +19,10 @@ export class Request {
                     Accept: "application/json",
                     "Content-Type": "application/json",
                 }) : config;
-            if (this.AuthService.isAuthenticated()) {
+            if (AuthService.isAuthenticated()) {
                 config.headers = {
                     ...config.headers,
-                    Authorization: `Bearer ${this.AuthService.getToken()}`,
+                    Authorization: `Bearer ${AuthService.getToken()}`,
                 };
             }
             config.validateStatus = function (status) {
@@ -33,7 +33,7 @@ export class Request {
 
         const errorInterceptor = async function (error) {
             if (error && error.response?.status === 401) {
-                await this.AuthService.logout();
+                await AuthService.logout();
             }
             if (
                 error
@@ -56,6 +56,6 @@ export class Request {
         }
         instance.interceptors.request.use(requestInterceptor, errorInterceptor);
         instance.interceptors.response.use(responseInterceptor, errorInterceptor);
-        return await instance.request(options);
+        return instance.request(options);
     }
 }
